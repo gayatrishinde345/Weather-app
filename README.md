@@ -9,11 +9,19 @@ A Flutter weather app for Android and Web, with forecasts and recent weather his
 - Google Maps with temperature and precipitation layers when API keys are configured.
 - Responsive dashboard and installable Web app (PWA).
 
-## Screenshot
+## Screenshots
+
+**Desktop browser**
 
 ![Weather Atlas dashboard showing forecasts and recent weather history](docs/screenshots/weather-dashboard.png)
 
-Browser preview using Pune as the location. Maps require API keys.
+**Mobile browser previews**
+
+| Forecast | Recent history |
+| --- | --- |
+| <img src="docs/screenshots/mobile-browser-forecast.png" alt="Weather Atlas forecast in a mobile browser viewport" width="300"> | <img src="docs/screenshots/mobile-browser-history.png" alt="Weather Atlas recent history in a mobile browser viewport" width="300"> |
+
+Browser captures with live Pune weather; mobile previews use a phone-sized viewport. Maps require API keys.
 
 ## Run locally
 
