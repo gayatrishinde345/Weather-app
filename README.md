@@ -21,7 +21,7 @@ A Flutter weather app for Android and Web, with forecasts and recent weather his
 | --- | --- |
 | <img src="docs/screenshots/mobile-browser-forecast.png" alt="Weather Atlas forecast in a mobile browser viewport" width="300"> | <img src="docs/screenshots/mobile-browser-history.png" alt="Weather Atlas recent history in a mobile browser viewport" width="300"> |
 
-Browser preview using Nashik, my current location. Maps require API keys. Mobile previews use a phone-sized browser viewport.
+Browser preview using Nashik, my current location. Maps require API keys.
 
 ## Run locally
 
