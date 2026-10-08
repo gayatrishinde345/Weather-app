@@ -89,7 +89,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               Text(
                                 c.coordinates == null
                                     ? 'Weather based on your device location'
-                                    : 'Location  ${c.coordinates!.latitude.toStringAsFixed(3)}°, ${c.coordinates!.longitude.toStringAsFixed(3)}°',
+                                    : 'Current location: ${c.locationName ?? '${c.coordinates!.latitude.toStringAsFixed(3)}°, ${c.coordinates!.longitude.toStringAsFixed(3)}°'}',
                                 style: const TextStyle(color: Colors.white70),
                               ),
                             ],
@@ -156,6 +156,13 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         if (c.coordinates != null) ...[
                           const SizedBox(height: 24),
                           WeatherMap(coordinates: c.coordinates!),
+                        ],
+                        if (c.locationName != null) ...[
+                          const SizedBox(height: 12),
+                          const Text(
+                            'Location names: © OpenStreetMap contributors (via Photon).',
+                            style: TextStyle(fontSize: 12),
+                          ),
                         ],
                       ],
                     ),

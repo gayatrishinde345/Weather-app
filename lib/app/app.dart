@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '../core/config/app_config.dart';
 import '../core/location/location_service.dart';
+import '../core/location/place_name_service.dart';
 import '../core/network/api_client.dart';
 import '../features/weather/data/open_meteo_repository.dart';
 import '../features/weather/data/open_weather_repository.dart';
@@ -27,6 +28,7 @@ class _WeatherAppState extends State<WeatherApp> {
           ? OpenWeatherRepository(api, AppConfig.openWeatherKey, meteo)
           : meteo,
       DeviceLocationService(),
+      placeNames: PhotonPlaceNameService(api),
     );
   }
 
