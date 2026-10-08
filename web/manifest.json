@@ -1,0 +1,36 @@
+﻿{
+    "name":  "Weather Atlas",
+    "short_name":  "Weather",
+    "start_url":  ".",
+    "display":  "standalone",
+    "background_color":  "#f4f7f8",
+    "theme_color":  "#186b68",
+    "description":  "Local five-day forecast, recent weather and weather maps.",
+    "orientation":  "any",
+    "prefer_related_applications":  false,
+    "icons":  [
+                  {
+                      "src":  "icons/Icon-192.png",
+                      "sizes":  "192x192",
+                      "type":  "image/png"
+                  },
+                  {
+                      "src":  "icons/Icon-512.png",
+                      "sizes":  "512x512",
+                      "type":  "image/png"
+                  },
+                  {
+                      "src":  "icons/Icon-maskable-192.png",
+                      "sizes":  "192x192",
+                      "type":  "image/png",
+                      "purpose":  "maskable"
+                  },
+                  {
+                      "src":  "icons/Icon-maskable-512.png",
+                      "sizes":  "512x512",
+                      "type":  "image/png",
+                      "purpose":  "maskable"
+                  }
+              ],
+    "scope":  "."
+}

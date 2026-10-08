@@ -1,0 +1,18 @@
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+def weatherBuildDirectory = rootProject.layout.buildDirectory.dir('../../build').get()
+rootProject.layout.buildDirectory.set(weatherBuildDirectory)
+
+subprojects {
+    project.layout.buildDirectory.set(weatherBuildDirectory.dir(project.name))
+    project.evaluationDependsOn(':app')
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.layout.buildDirectory
+}

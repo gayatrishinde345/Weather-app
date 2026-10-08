@@ -1,0 +1,47 @@
+import java.util.Base64
+
+plugins {
+    id 'com.android.application'
+    id 'dev.flutter.flutter-gradle-plugin'
+}
+
+def weatherDartDefines = [:]
+def encodedDefines = project.findProperty('dart-defines')
+if (encodedDefines) {
+    encodedDefines.split(',').each { encoded ->
+        def decoded = new String(Base64.decoder.decode(encoded), 'UTF-8')
+        def parts = decoded.split('=', 2)
+        weatherDartDefines[parts[0]] = parts.length > 1 ? parts[1] : ''
+    }
+}
+
+android {
+    namespace 'com.example.weather_app'
+    compileSdk flutter.compileSdkVersion
+    ndkVersion flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    defaultConfig {
+        applicationId 'com.example.weather_app'
+        minSdk flutter.minSdkVersion
+        targetSdk flutter.targetSdkVersion
+        versionCode flutter.versionCode
+        versionName flutter.versionName
+        manifestPlaceholders['GOOGLE_MAPS_API_KEY'] = weatherDartDefines['GOOGLE_MAPS_API_KEY'] ?: ''
+    }
+
+    buildTypes {
+        release {
+            // Local assignment build; configure release signing for distribution.
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source '../..'
+}

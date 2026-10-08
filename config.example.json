@@ -1,0 +1,5 @@
+{
+  "USE_OPENWEATHER": "false",
+  "OPENWEATHER_API_KEY": "",
+  "GOOGLE_MAPS_API_KEY": ""
+}
